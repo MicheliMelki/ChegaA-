@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Encomendas</title>
+  <link rel="stylesheet" href="css/main_login.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <button class="sidebar-toggle" id="sidebar-toggle">
+      <i data-feather="chevron-left"></i>
+    </button>
+    <div class="logo-container">
+      <i data-feather="package" size="24"></i>
+      <h2>Gestão</h2>
+    </div>
+    <nav>
+      <a href="main_login.html">
+        <i data-feather="home"></i>
+        <span>Início</span>
+      </a>
+      <a href="moradores.html">
+        <i data-feather="users"></i>
+        <span>Moradores</span>
+      </a>
+      <a href="encomendas.html" class="active">
+        <i data-feather="package"></i>
+        <span>Encomendas</span>
+      </a>
+      <a href="notificacoes.html">
+        <i data-feather="bell"></i>
+        <span>Notificações</span>
+      </a>
+    </nav>
+    
+    <div class="user-profile">
+      <div class="user-avatar">P</div>
+      <div class="user-info">
+        <div class="user-name">Porteiro</div>
+        <div class="user-role">Administrador</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="mobile-header">
+      <button class="mobile-toggle-btn">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+    
+    <div class="top-bar">
+      <div class="search-container">
+        <i data-feather="search" size="18"></i>
+        <input type="text" placeholder="Pesquisar encomendas...">
+      </div>
+      
+      <div class="notification-icon">
+        <i data-feather="bell" size="20"></i>
+        <span class="notification-badge">3</span>
+      </div>
+    </div>
+    
+    <header>
+      <h1>Gestão de Encomendas</h1>
+      <p>Cadastre e administre as encomendas do condomínio</p>
+    </header>
+    
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Cadastro de Encomendas</h2>
+        <button class="btn-clear" id="btn-novo">
+          <i data-feather="plus-circle"></i> Nova Encomenda
+        </button>
+      </div>
+      
+      <form id="form-encomenda" class="form-grid">
+        <input type="hidden" id="encomenda-id">
+        
+        <div class="form-group">
+          <label for="nomeMorador">Nome do Morador</label>
+          <div class="input-icon">
+            <i data-feather="user"></i>
+            <input type="text" id="nomeMorador" placeholder="Digite o nome do morador" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="apartamento">Apartamento</label>
+          <div class="input-icon">
+            <i data-feather="home"></i>
+            <input type="text" id="apartamento" placeholder="Número do apartamento" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <div class="input-icon">
+            <i data-feather="package"></i>
+            <input type="text" id="descricao" placeholder="Descreva a encomenda" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="status">Status</label>
+          <div class="select-wrapper">
+            <select id="status" required>
+              <option value="" disabled selected>Selecione o status</option>
+              <option value="PENDENTE">Pendente</option>
+              <option value="RECEBIDA">Recebida</option>
+              <option value="ENTREGUE">Entregue</option>
+            </select>
+            <i data-feather="chevron-down"></i>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="dataRecebimento">Data de Recebimento</label>
+          <div class="input-icon">
+            <i data-feather="calendar"></i>
+            <input type="date" id="dataRecebimento" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="recebidoPor">Recebido por</label>
+          <div class="input-icon">
+            <i data-feather="shield"></i>
+            <input type="text" id="recebidoPor" placeholder="Nome do porteiro" required>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" id="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-primary">
+            <i data-feather="save"></i> Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="card mt-4">
+      <div class="card-header">
+        <h2 class="card-title">Lista de Encomendas</h2>
+        <div class="filter-controls">
+          <div class="select-wrapper small">
+            <select id="filter-status">
+              <option value="TODOS">Todos Status</option>
+              <option value="PENDENTE">Pendente</option>
+              <option value="RECEBIDA">Recebida</option>
+              <option value="ENTREGUE">Entregue</option>
+            </select>
+            <i data-feather="chevron-down"></i>
+          </div>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Morador</th>
+              <th>Apartamento</th>
+              <th>Descrição</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="lista-encomendas">
+            <!-- Conteúdo será preenchido via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="no-data-message" id="no-data">
+        <i data-feather="package" size="48"></i>
+        <p>Não há encomendas cadastradas</p>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+    // Inicializa os ícones
+    feather.replace();
+    
+    // Adicionar funcionalidade ao botão de toggle do sidebar
+    document.getElementById('sidebar-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('collapsed-sidebar');
+      
+      // Alternar o ícone do botão
+      const icon = this.querySelector('i');
+      if (document.body.classList.contains('collapsed-sidebar')) {
+        icon.setAttribute('data-feather', 'chevron-right');
+      } else {
+        icon.setAttribute('data-feather', 'chevron-left');
+      }
+      feather.replace();
+    });
+    
+    // Funcionalidade para telas móveis
+    document.querySelector('.mobile-toggle-btn')?.addEventListener('click', function() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    });
+  </script>
+  
+  <script src="encomendas.js"></script>
+</body>
+</html>

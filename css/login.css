@@ -1,0 +1,403 @@
+/* Definindo variáveis no :root */
+:root {
+    --primary-color: #f8a555;
+    --secondary-color: #2563eb;
+    --background-color: #f5f5f5;
+    --white-color: #ffffff;
+    --text-color: #333;
+    --hero-font-size: 3.5rem;
+    --section-padding: 4rem 1rem;
+    --font-family: 'Segoe UI', sans-serif;
+    --button-font-size: 1rem;
+    --button-hover-color: #EE5E16;
+    --heading-font-size: 2rem;
+  }
+  
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  /* Containers */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Cabeçalho */
+  .header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0rem 0; /* menor altura */
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: url('img/Logo_img .jpg') no-repeat right center;
+    padding-right: 0px;
+  }
+  
+  .logo img {
+    height: 100px;
+  }
+  
+  /* Botões */
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('../img/Img_1.jpg') no-repeat right center;
+    background-size: cover;
+    color: var(--white-color);
+    text-align: center;
+    padding: var(--section-padding);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero h1 {
+    font-size: var(--hero-font-size);
+    font-weight: bold;
+    margin-bottom: 5rem;
+    padding: 0rem 2rem;
+    color: var(--white-color);
+  }
+  
+  .hero h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding: 0rem 2rem;
+    color: var(--white-color);
+  }
+  
+  .hero p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: var(--white-color);
+  }
+  
+  /* Benefícios */
+  .benefits {
+    background-color: rgb(57, 110, 117);
+    padding: var(--section-padding);
+    color: var(--white-color);
+    text-align: center;
+    width: 100vw;
+    margin: 0;
+  }
+  
+  .benefits .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .benefits .container div h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsivo */
+  @media (min-width: 768px) {
+    .benefits .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Sobre Nós */
+  .about {
+    background-color: var(--primary-color);
+    background-image: url('img/Img_2.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    padding: 2rem 1rem;
+    color: var(--white-color);
+  }
+  
+  .about .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .about .about-img {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about .about-text h2 {
+    font-size: var(--heading-font-size);
+    margin-bottom: 1rem;
+  }
+  
+  .about .about-text p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Responsivo para telas maiores */
+  @media (min-width: 768px) {
+    .about .container {
+      flex-direction: row;
+      justify-content: center;
+      text-align: left;
+    }
+  
+    .about .about-img {
+      max-width: 300px;
+    }
+  
+    .about .about-text {
+      max-width: 1200px;
+    }
+  }
+  
+  /* Como funciona */
+  .how-it-works {
+    background-color: var(--white-color);
+    text-align: center;
+    padding: var(--section-padding);
+  }
+  
+  .how-it-works h2 {
+    font-size: var(--heading-font-size);
+    margin-bottom: 2rem;
+  }
+  
+  .steps p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Contato */
+  .contact {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: var(--section-padding);
+  }
+  
+  .contact h2 {
+    font-size: var(--heading-font-size);
+    margin-bottom: 2rem;
+  }
+  
+  .form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: var(--button-font-size);
+  }
+  
+  /* Rodapé */
+  .footer {
+    background-color: rgb(57, 110, 117);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .login-page {
+    background: url('../img/Img_3.png') no-repeat right center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .login-box {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .back-link {
+    margin-top: 1.5rem;
+  }
+  
+  .back-link a {
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+  
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Modal de Recuperação de Senha */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+  }
+  
+  .modal-content {
+    background-color: var(--white-color);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .modal-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .modal-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+  
+  .modal-content input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .modal-content button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content button:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  .modal-content .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .modal-content .close:hover {
+    color: var(--text-color);
+  }
+  
+  .entregas {
+    padding: var(--section-padding);
+  }
+  
+  .entregas h2 {
+    font-size: var(--heading-font-size);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  .entregas .form {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    max-width: 500px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  
+  
+  

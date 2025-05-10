@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de Gestão de Moradores para condomínios">
+  <title>Gestão de Moradores</title>
+  <link rel="stylesheet" href="css/moradores.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-building"></i> Gestão de Moradores</h1>
+      <p class="subtitle">Sistema de cadastro e controle de moradores do condomínio</p>
+    </header>
+
+    <main>
+      <section class="card" id="form-section">
+        <h2><i class="fas fa-user-plus"></i> Cadastro de Morador</h2>
+        <form id="morador-form">
+          <input type="hidden" id="morador-id">
+          
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" placeholder="Ex: João da Silva" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="apartamento">Apartamento</label>
+            <input type="text" id="apartamento" placeholder="Ex: Bloco A, Apto 101" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" placeholder="Ex: (11) 99999-9999" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Ex: joao@email.com" required>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Salvar</button>
+            <button type="reset" class="btn btn-secondary"><i class="fas fa-undo"></i> Limpar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" id="list-section">
+        <div class="section-header">
+          <h2><i class="fas fa-list"></i> Lista de Moradores</h2>
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="Buscar morador...">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+        
+        <div class="moradores-container">
+          <div id="moradores-header">
+            <span class="col-nome">Nome</span>
+            <span class="col-apto">Apartamento</span>
+            <span class="col-telefone">Telefone</span>
+            <span class="col-email">E-mail</span>
+            <span class="col-acoes">Ações</span>
+          </div>
+          <ul id="lista-moradores"></ul>
+        </div>
+        
+        <div id="no-results" class="hidden">
+          <i class="fas fa-search"></i>
+          <p>Nenhum morador encontrado</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="navigation">
+      <a href="main_login.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar para Página Inicial</a>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Sistema de Gestão de Moradores | Desenvolvido com <i class="fas fa-heart"></i></p>
+    </footer>
+  </div>
+
+  <div id="notification" class="notification hidden">
+    <span id="notification-message"></span>
+    <button id="close-notification"><i class="fas fa-times"></i></button>
+  </div>
+  
+  <script src="js/moradores.js"></script>
+</body>
+</html>

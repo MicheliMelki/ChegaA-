@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Gestão de Encomendas</title>
+  <link rel="stylesheet" href="css/main_login.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <button class="sidebar-toggle" id="sidebar-toggle">
+      <i data-feather="chevron-left"></i>
+    </button>
+    <div class="logo-container">
+      <i data-feather="package" size="24"></i>
+      <h2>Gestão</h2>
+    </div>
+    <nav>
+      <a href="index.html" class="active">
+        <i data-feather="home"></i>
+        <span>Início</span>
+      </a>
+      <a href="moradores.html">
+        <i data-feather="users"></i>
+        <span>Moradores</span>
+      </a>
+      <a href="encomendas.html">
+        <i data-feather="package"></i>
+        <span>Encomendas</span>
+      </a>
+      <a href="notificacoes.html">
+        <i data-feather="bell"></i>
+        <span>Notificações</span>
+      </a>
+    </nav>
+    
+    <div class="user-profile">
+      <div class="user-avatar">P</div>
+      <div class="user-info">
+        <div class="user-name">Porteiro</div>
+        <div class="user-role">Administrador</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="mobile-header">
+      <button class="mobile-toggle-btn">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+    
+    <div class="top-bar">
+      <div class="search-container">
+        <i data-feather="search" size="18"></i>
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+      
+      <div class="notification-icon">
+        <i data-feather="bell" size="20"></i>
+        <span class="notification-badge">3</span>
+      </div>
+    </div>
+    
+    <header>
+      <h1>Dashboard de Encomendas</h1>
+      <p>Bem-vindo ao sistema de gestão de encomendas do condomínio.</p>
+    </header>
+    
+    <div class="dashboard-summary">
+      <div class="summary-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i data-feather="package" size="24"></i>
+          </div>
+        </div>
+        <div class="card-title">Encomendas Pendentes</div>
+        <div class="card-value">12</div>
+        <div class="card-change positive">
+          <i data-feather="arrow-down" size="14"></i> 8% em relação à semana passada
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i data-feather="check-circle" size="24"></i>
+          </div>
+        </div>
+        <div class="card-title">Encomendas Entregues</div>
+        <div class="card-value">48</div>
+        <div class="card-change positive">
+          <i data-feather="arrow-up" size="14"></i> 12% em relação à semana passada
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i data-feather="users" size="24"></i>
+          </div>
+        </div>
+        <div class="card-title">Total de Moradores</div>
+        <div class="card-value">126</div>
+        <div class="card-change neutral">
+          <i data-feather="minus" size="14"></i> Sem alteração
+        </div>
+      </div>
+    </div>
+    
+    <div class="recent-deliveries">
+      <div class="section-header">
+        <h3 class="section-title">Encomendas Recentes</h3>
+        <a href="encomendas.html" class="view-all">
+          Ver tudo <i data-feather="chevron-right" size="16"></i>
+        </a>
+      </div>
+      
+      <table class="deliveries-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Morador</th>
+            <th>Apartamento</th>
+            <th>Data de Recebimento</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1258</td>
+            <td>Maria Silva</td>
+            <td>302 A</td>
+            <td>09/05/2025</td>
+            <td><span class="status-badge status-pending">Pendente</span></td>
+            <td>
+              <button class="action-button">
+                <i data-feather="eye" size="16"></i>
+              </button>
+              <button class="action-button">
+                <i data-feather="check" size="16"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>#1257</td>
+            <td>João Pereira</td>
+            <td>104 B</td>
+            <td>09/05/2025</td>
+            <td><span class="status-badge status-pending">Pendente</span></td>
+            <td>
+              <button class="action-button">
+                <i data-feather="eye" size="16"></i>
+              </button>
+              <button class="action-button">
+                <i data-feather="check" size="16"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>#1256</td>
+            <td>Ana Ferreira</td>
+            <td>501 C</td>
+            <td>08/05/2025</td>
+            <td><span class="status-badge status-delivered">Entregue</span></td>
+            <td>
+              <button class="action-button">
+                <i data-feather="eye" size="16"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>#1255</td>
+            <td>Lucas Martins</td>
+            <td>202 A</td>
+            <td>08/05/2025</td>
+            <td><span class="status-badge status-delivered">Entregue</span></td>
+            <td>
+              <button class="action-button">
+                <i data-feather="eye" size="16"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>#1254</td>
+            <td>Carla Mendes</td>
+            <td>405 B</td>
+            <td>07/05/2025</td>
+            <td><span class="status-badge status-delivered">Entregue</span></td>
+            <td>
+              <button class="action-button">
+                <i data-feather="eye" size="16"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  
+  <script>
+    feather.replace();
+    
+    // Adicionar funcionalidade ao botão de toggle do sidebar
+    document.getElementById('sidebar-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('collapsed-sidebar');
+      
+      // Alternar o ícone do botão
+      const icon = this.querySelector('i');
+      if (document.body.classList.contains('collapsed-sidebar')) {
+        icon.setAttribute('data-feather', 'chevron-right');
+      } else {
+        icon.setAttribute('data-feather', 'chevron-left');
+      }
+      feather.replace();
+    });
+    
+    // Funcionalidade para telas móveis
+    document.querySelector('.mobile-toggle-btn')?.addEventListener('click', function() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ChagAí</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" type="image/png" href="img/Favicon.jpg">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="login-page">
+    
+    <!-- Login -->
+    <div id="login-box" class="login-box">
+      <h2>Login</h2>
+      <form class="form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+
+      <div class="back-link">
+        <a href="javascript:void(0);" onclick="recuperarSenha()">Esqueceu sua senha?</a>
+      </div>
+
+      <div class="back-link">
+        <a href="index.html">← Voltar para a página inicial</a>
+      </div>
+
+      <div class="back-link">
+        <a href="javascript:void(0);" onclick="mostrarCadastro()">Não tem conta? Cadastre-se</a>
+      </div>
+    </div>
+
+    <!-- Cadastro -->
+    <div id="cadastro-box" class="login-box hidden">
+      <h2>Cadastro</h2>
+      <form class="form">
+        <input type="text" placeholder="Nome completo" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="tel" placeholder="Telefone" required>
+        <input type="password" placeholder="Criar senha" required>
+        <button type="submit" class="btn-primary">Cadastrar</button>
+      </form>
+
+      <div class="back-link">
+        <a href="javascript:void(0);" onclick="mostrarLogin()">← Já tem conta? Fazer login</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Recuperação de Senha -->
+  <div id="modalRecuperar" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h3>Recuperar Senha</h3>
+      <p>Digite seu e-mail <strong>ou</strong> número de WhatsApp:</p>
+      <input type="email" id="emailRecuperar" placeholder="Digite seu e-mail">
+      <input type="tel" id="whatsappRecuperar" placeholder="Ou seu número de WhatsApp">
+      <button onclick="enviarRecuperacao()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarCadastro() {
+      document.getElementById('login-box').classList.add('hidden');
+      document.getElementById('cadastro-box').classList.remove('hidden');
+    }
+
+    function mostrarLogin() {
+      document.getElementById('cadastro-box').classList.add('hidden');
+      document.getElementById('login-box').classList.remove('hidden');
+    }
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
