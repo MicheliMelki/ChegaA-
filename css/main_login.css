@@ -442,3 +442,26 @@ header p {
 .collapsed-sidebar .user-avatar {
   margin-right: 0;
 }
+
+.logout-container {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #fff;
+  background-color: #d9534f;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c9302c;
+}
