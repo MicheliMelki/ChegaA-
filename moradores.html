@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sistema de Gestão de Moradores para condomínios">
   <title>Gestão de Moradores</title>
-  <link rel="stylesheet" href="css/moradores.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="img/Favicon.jpg">
+  <link rel="stylesheet" href="css/moradores.css">
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -20,27 +22,27 @@
         <h2><i class="fas fa-user-plus"></i> Cadastro de Morador</h2>
         <form id="morador-form">
           <input type="hidden" id="morador-id">
-          
+
           <div class="form-group">
             <label for="nome">Nome Completo</label>
             <input type="text" id="nome" placeholder="Ex: João da Silva" required>
           </div>
-          
+
           <div class="form-group">
             <label for="apartamento">Apartamento</label>
             <input type="text" id="apartamento" placeholder="Ex: Bloco A, Apto 101" required>
           </div>
-          
+
           <div class="form-group">
             <label for="telefone">Telefone</label>
             <input type="tel" id="telefone" placeholder="Ex: (11) 99999-9999" required>
           </div>
-          
+
           <div class="form-group">
             <label for="email">E-mail</label>
             <input type="email" id="email" placeholder="Ex: joao@email.com" required>
           </div>
-          
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Salvar</button>
             <button type="reset" class="btn btn-secondary"><i class="fas fa-undo"></i> Limpar</button>
@@ -56,7 +58,7 @@
             <i class="fas fa-search"></i>
           </div>
         </div>
-        
+
         <div class="moradores-container">
           <div id="moradores-header">
             <span class="col-nome">Nome</span>
@@ -65,9 +67,11 @@
             <span class="col-email">E-mail</span>
             <span class="col-acoes">Ações</span>
           </div>
-          <ul id="lista-moradores"></ul>
+          <ul id="lista-moradores">
+            <!-- Lista gerada dinamicamente -->
+          </ul>
         </div>
-        
+
         <div id="no-results" class="hidden">
           <i class="fas fa-search"></i>
           <p>Nenhum morador encontrado</p>
@@ -80,15 +84,25 @@
     </div>
 
     <footer>
-      <p>&copy; 2025 Sistema de Gestão de Moradores | Desenvolvido com <i class="fas fa-heart"></i></p>
+      <p>&copy; 2025 Sistema ChegAí de Gestão de Moradores. Todos os direitos reservados.</p>
     </footer>
   </div>
+  
+  <div id="confirmation-modal" class="modal hidden">
+  <div class="modal-content">
+    <p id="confirmation-message"></p>
+    <div class="modal-actions">
+      <button id="confirm-button" class="btn btn-primary">Confirmar</button>
+      <button id="cancel-button" class="btn btn-secondary">Cancelar</button>
+    </div>
+  </div>
+</div>
 
   <div id="notification" class="notification hidden">
     <span id="notification-message"></span>
     <button id="close-notification"><i class="fas fa-times"></i></button>
   </div>
-  
+
   <script src="js/moradores.js"></script>
 </body>
 </html>
