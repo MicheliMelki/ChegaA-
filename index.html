@@ -1,92 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="img/Favicon.jpg">
-  <title>ChagAí - Suas Entregas com Segurança</title>
-  <link rel="stylesheet" href="css/style.css" />
-
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="img/Favicon.jpg">
+    <title>ChegAí - Suas Entregas com Segurança</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="logo"><img src="img/Logo_img.jpg" alt="Logo ChegAí" /></h1>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#beneficios" class="nav-link">Benefícios</a>
+                <a href="#como-funciona" class="nav-link">Como Funciona</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#contato" class="nav-link">Cadastro</a>
+                <a href="login.html" class="btn-primary">Login</a>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="container header-content">
-      <h1 class="logo"><img src="img/Logo_img.jpg" alt="Logo ChegAí" /></h1>
-      <a href="login.html" class="btn-primary">Login</a>
+    <section class="hero">
+    <div class="container hero-content">
+        <h1>Condomínio Parque dos Castanheiros</h1>
+        <h2>Suas encomendas, sempre seguras com o porteiro</h2>
+        <p>Evite transtornos! Deixe suas entregas com a portaria do prédio e receba notificações em tempo real pelo WhatsApp quando chegarem.</p>
+        <div class="hero-buttons">
+            <a href="#contato" class="btn-primary">Cadastre-se agora</a>
+            <a href="#como-funciona" class="btn-secondary">Como funciona</a>
+        </div>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Condomínio Parque dos Castanheiros</h1>
-    <h2>Suas encomendas, sempre seguras com o porteiro</h2>
-    <p>Evite transtornos! Deixe suas entregas com a portaria do prédio e receba notificações em tempo real.</p>
-    <a href="#contato" class="btn-primary">Cadastre-se agora</a>
-  </section>
-
-  <!-- Benefícios -->
-<section class="benefits">
-  <div class="container">
-    <div>
-      <h3>Receba com Segurança</h3>
-      <p>Suas encomendas são guardadas pelo porteiro até você poder buscá-las.</p>
-    </div>
-    <div>
-      <h3>Notificação Instantânea</h3>
-      <p>Você é avisado por mensagem assim que a entrega chega na portaria.</p>
-    </div>
-    <div>
-      <h3>Facilidade no Dia a Dia</h3>
-      <p>Não precisa estar em casa o tempo todo para receber entregas.</p>
-    </div>
-  </div>
+    <img class="hero-background-image" src="img/Img_1.jpg" alt="" />
 </section>
 
-  <!-- Como funciona -->
-  <section class="how-it-works">
-    <h2>Como funciona?</h2>
-    <div class="steps">
-      <p>📦 O entregador deixa a encomenda na portaria</p>
-      <p>👨‍✈️ O porteiro recebe e registra a entrega</p>
-      <p>📲 Você recebe uma notificação via WhatsApp</p>
-      <p>🛍️ Retire sua encomenda quando quiser!</p>
-    </div>
-  </section>
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefícios do ChegAí</h2>
+            </div>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Receba com Segurança</h3>
+                    <p>Suas encomendas são guardadas pelo porteiro até você poder buscá-las, evitando extravios e roubos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Notificação Instantânea</h3>
+                    <p>Você é avisado por mensagem no WhatsApp assim que a entrega chega na portaria.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Facilidade no Dia a Dia</h3>
+                    <p>Não precisa estar em casa o tempo todo para receber entregas. Retire quando for conveniente para você.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Sobre Nós -->
-<section class="about">
-  <div class="container about-content">
-    <img src="img/Img_2.jpg" alt="Imagem sobre a empresa" class="about-img" />
-    <div class="about-text">
-      <h2>Sobre Nós</h2>
-      <p>A ChegAí nasceu com a missão de tornar o recebimento de encomendas mais seguro e conveniente. 
-        Sabemos que nem sempre é possível estar em casa para receber suas entregas, por isso oferecemos 
-        uma solução simples: notificações em tempo real assim que seu porteiro recebe sua encomenda.</p>
-      <p>Somos uma equipe apaixonada por tecnologia e praticidade, comprometida em melhorar o dia a dia 
-        dos moradores de condomínios e residências.</p>
-    </div>
-  </div>
-</section>  
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Como funciona?</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Entrega na portaria</h3>
+                        <p>O entregador deixa a encomenda com o porteiro do condomínio, que está sempre disponível para recebê-la.</p>
+                    </div>
+                    <div class="step-connection"></div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Registro da entrega</h3>
+                        <p>O porteiro registra a entrega no sistema ChegAí, informando dados importantes como remetente e destinatário.</p>
+                    </div>
+                    <div class="step-connection"></div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Notificação via WhatsApp</h3>
+                        <p>Você recebe uma notificação no seu WhatsApp informando que sua encomenda está guardada na portaria.</p>
+                    </div>
+                    <div class="step-connection"></div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Retirada quando quiser</h3>
+                        <p>Retire sua encomenda na portaria quando for conveniente para você, sem pressa e com toda segurança.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Formulário -->
-  <section id="contato" class="contact">
-    <h2>Cadastre-se para usar o serviço</h2>
-    <form class="form">
-      <input type="text" placeholder="Seu nome" required>
-      <input type="email" placeholder="Seu email" required>
-      <input type="text" placeholder="Número do apartamento" required>
-      <button type="submit" class="btn-primary">Quero Receber</button>
-    </form>
-  </section>
+    <section id="sobre" class="about">
+        <div class="container about-content">
+            <div class="about-image">
+                <img src="img/Img_2.jpg" alt="Imagem sobre a empresa" />
+            </div>
+            <div class="about-text">
+                <h2>Sobre Nós</h2>
+                <p>A ChegAí nasceu com a missão de tornar o recebimento de encomendas mais seguro e conveniente para moradores de condomínios. Sabemos que nem sempre é possível estar em casa para receber suas entregas, por isso oferecemos uma solução simples: notificações em tempo real assim que seu porteiro recebe sua encomenda.</p>
+                <p>Somos uma equipe apaixonada por tecnologia e praticidade, comprometida em melhorar o dia a dia dos moradores de condomínios com uma solução que une segurança e conveniência.</p>
+                <p>No Condomínio Parque dos Castanheiros, garantimos que cada encomenda seja tratada com o mesmo cuidado que você teria, até que esteja em suas mãos.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>&copy; 2025 ChagAí. Todos os direitos reservados.</p>
-  </footer>
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cadastre-se para usar o serviço</h2>
+            </div>
+            <div class="form-container">
+                <form class="form">
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome completo</label>
+                        <input type="text" id="nome" class="form-input" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" class="form-input" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apartamento" class="form-label">Número do apartamento</label>
+                        <input type="text" id="apartamento" class="form-input" placeholder="Ex: 101" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone" class="form-label">WhatsApp</label>
+                        <input type="tel" id="telefone" class="form-input" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Quero Receber Notificações</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="img/Logo_img.jpg" alt="Logo ChegAí" />
+                </div>
+                <p>Facilitando o recebimento de encomendas em condomínios com segurança e praticidade.</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Condomínio Parque dos Castanheiros<br>São Paulo - SP</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <p>contato@chegai.com.br</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>(11) 99999-9999</p>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2025 ChegAí. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle para mobile
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Fechar menu mobile se estiver aberto
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
