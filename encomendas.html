@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestão de Encomendas</title>
-  <link rel="stylesheet" href="css/main_login.css">
+  <link rel="stylesheet" href="css/encomendas.css">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
@@ -34,7 +34,6 @@
         <span>Notificações</span>
       </a>
     </nav>
-    
     <div class="user-profile">
       <div class="user-avatar">P</div>
       <div class="user-info">
@@ -54,7 +53,7 @@
     <div class="top-bar">
       <div class="search-container">
         <i data-feather="search" size="18"></i>
-        <input type="text" placeholder="Pesquisar encomendas...">
+        <input type="text" placeholder="Pesquisar...">
       </div>
       
       <div class="notification-icon">
@@ -62,150 +61,97 @@
         <span class="notification-badge">3</span>
       </div>
     </div>
-    
-    <header>
-      <h1>Gestão de Encomendas</h1>
-      <p>Cadastre e administre as encomendas do condomínio</p>
-    </header>
-    
-    <div class="card">
-      <div class="card-header">
-        <h2 class="card-title">Cadastro de Encomendas</h2>
-        <button class="btn-clear" id="btn-novo">
-          <i data-feather="plus-circle"></i> Nova Encomenda
-        </button>
+
+    <!-- CONTEÚDO DA PÁGINA: NOVA ENCOMENDA -->
+    <div class="page-content">
+      <div class="page-header">
+        <h1 class="page-title">Nova Encomenda</h1>
+        <p class="page-subtitle">Cadastro rápido de encomendas</p>
       </div>
-      
-      <form id="form-encomenda" class="form-grid">
-        <input type="hidden" id="encomenda-id">
-        
-        <div class="form-group">
-          <label for="nomeMorador">Nome do Morador</label>
-          <div class="input-icon">
-            <i data-feather="user"></i>
-            <input type="text" id="nomeMorador" placeholder="Digite o nome do morador" required>
+
+      <div class="form-container">
+        <div class="form-section">
+          <label class="form-label">Buscar Morador</label>
+          <div class="search-resident">
+            <div class="search-resident-icon"></div>
+            <input type="text" class="search-resident-input" placeholder="Digite o nome ou apartamento do morador">
+          </div>
+
+          <div class="resident-card">
+            <div class="resident-avatar">M</div>
+            <div class="resident-info">
+              <div class="resident-name">Maria Silva</div>
+              <div class="resident-details">Apartamento 302 - Torre A</div>
+              <div class="resident-details">WhatsApp: (11) 99999-9999</div>
+            </div>
+            <div class="notify-badge">
+              <div class="whatsapp-icon"></div>
+              Notificar
+            </div>
           </div>
         </div>
-        
-        <div class="form-group">
-          <label for="apartamento">Apartamento</label>
-          <div class="input-icon">
-            <i data-feather="home"></i>
-            <input type="text" id="apartamento" placeholder="Número do apartamento" required>
+
+        <div class="form-section">
+          <label class="form-label">Detalhes da Encomenda</label>
+
+          <div>
+            <p class="form-sublabel">Tipo de Encomenda</p>
+            <div class="package-types">
+              <div class="package-type active">Carta</div>
+              <div class="package-type inactive">Pacote Pequeno</div>
+              <div class="package-type inactive">Pacote Grande</div>
+              <div class="package-type inactive">Outro</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <p class="form-sublabel">Descrição</p>
+              <input type="text" class="form-input" placeholder="Descreva a encomenda">
+            </div>
+
+            <div class="form-group">
+              <p class="form-sublabel">Recebido por</p>
+              <input type="text" class="form-input" placeholder="Porteiro">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="upload-box">
+              <div class="upload-icon"></div>
+              <span class="upload-text">Escanear código</span>
+            </div>
+
+            <div class="upload-box">
+              <div class="upload-icon"></div>
+              <span class="upload-text">Tirar foto</span>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <div class="btn btn-cancel">Cancelar</div>
+            <div class="btn btn-save">Cadastrar Encomenda</div>
           </div>
         </div>
-        
-        <div class="form-group">
-          <label for="descricao">Descrição</label>
-          <div class="input-icon">
-            <i data-feather="package"></i>
-            <input type="text" id="descricao" placeholder="Descreva a encomenda" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="status">Status</label>
-          <div class="select-wrapper">
-            <select id="status" required>
-              <option value="" disabled selected>Selecione o status</option>
-              <option value="PENDENTE">Pendente</option>
-              <option value="RECEBIDA">Recebida</option>
-              <option value="ENTREGUE">Entregue</option>
-            </select>
-            <i data-feather="chevron-down"></i>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="dataRecebimento">Data de Recebimento</label>
-          <div class="input-icon">
-            <i data-feather="calendar"></i>
-            <input type="date" id="dataRecebimento" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label for="recebidoPor">Recebido por</label>
-          <div class="input-icon">
-            <i data-feather="shield"></i>
-            <input type="text" id="recebidoPor" placeholder="Nome do porteiro" required>
-          </div>
-        </div>
-        
-        <div class="form-actions">
-          <button type="button" class="btn-secondary" id="btn-cancelar">Cancelar</button>
-          <button type="submit" class="btn-primary">
-            <i data-feather="save"></i> Salvar
-          </button>
-        </div>
-      </form>
-    </div>
-    
-    <div class="card mt-4">
-      <div class="card-header">
-        <h2 class="card-title">Lista de Encomendas</h2>
-        <div class="filter-controls">
-          <div class="select-wrapper small">
-            <select id="filter-status">
-              <option value="TODOS">Todos Status</option>
-              <option value="PENDENTE">Pendente</option>
-              <option value="RECEBIDA">Recebida</option>
-              <option value="ENTREGUE">Entregue</option>
-            </select>
-            <i data-feather="chevron-down"></i>
-          </div>
-        </div>
-      </div>
-      
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Morador</th>
-              <th>Apartamento</th>
-              <th>Descrição</th>
-              <th>Data</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody id="lista-encomendas">
-            <!-- Conteúdo será preenchido via JavaScript -->
-          </tbody>
-        </table>
-      </div>
-      
-      <div class="no-data-message" id="no-data">
-        <i data-feather="package" size="48"></i>
-        <p>Não há encomendas cadastradas</p>
       </div>
     </div>
   </main>
-  
+
   <script>
-    // Inicializa os ícones
     feather.replace();
-    
-    // Adicionar funcionalidade ao botão de toggle do sidebar
+
+    // Sidebar toggle
     document.getElementById('sidebar-toggle').addEventListener('click', function() {
       document.body.classList.toggle('collapsed-sidebar');
-      
-      // Alternar o ícone do botão
       const icon = this.querySelector('i');
-      if (document.body.classList.contains('collapsed-sidebar')) {
-        icon.setAttribute('data-feather', 'chevron-right');
-      } else {
-        icon.setAttribute('data-feather', 'chevron-left');
-      }
+      icon.setAttribute('data-feather', document.body.classList.contains('collapsed-sidebar') ? 'chevron-right' : 'chevron-left');
       feather.replace();
     });
-    
-    // Funcionalidade para telas móveis
+
+    // Mobile sidebar toggle
     document.querySelector('.mobile-toggle-btn')?.addEventListener('click', function() {
       document.querySelector('.sidebar').classList.toggle('active');
     });
   </script>
-  
-  <script src="encomendas.js"></script>
 </body>
 </html>
